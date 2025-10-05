@@ -1,0 +1,62 @@
+# Multi-stage Production Dockerfile for Frontend
+FROM node:20-alpine AS builder
+
+# Set working directory
+WORKDIR /app
+
+# Install curl for health checks
+RUN apk add --no-cache curl
+
+# Copy package files
+COPY package.json package-lock.json* ./
+
+# Install dependencies  
+RUN npm ci --omit=dev --silent
+
+# Copy source code
+COPY . .
+
+# Build the application
+RUN npm run build
+
+# Production stage
+FROM node:20-alpine AS runner
+
+# Install curl for health checks
+RUN apk add --no-cache curl
+
+# Create non-root user
+RUN addgroup --system --gid 1001 nextjs
+RUN adduser --system --uid 1001 nextjs
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json for runtime
+COPY --from=builder /app/package.json ./package.json
+
+# Copy built application from builder stage
+COPY --from=builder --chown=nextjs:nextjs /app/.next ./.next
+COPY --from=builder --chown=nextjs:nextjs /app/public ./public
+COPY --from=builder --chown=nextjs:nextjs /app/node_modules ./node_modules
+
+# Create SSL directory
+RUN mkdir -p ssl_certs && chown nextjs:nextjs ssl_certs
+
+# Switch to non-root user
+USER nextjs
+
+# Set environment variables
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
+
+# Expose port
+EXPOSE 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:3000 || exit 1
+
+# Start the application
+CMD ["npm", "start"]

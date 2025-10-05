@@ -1,0 +1,20 @@
+# Frontend Development Dockerfile
+FROM node:20-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install curl for health checks
+RUN apk add --no-cache curl
+
+# Copy package files
+COPY package.json package-lock.json* ./
+
+# Install dependencies (including dev dependencies)
+RUN npm ci
+
+# Expose port
+EXPOSE 3000
+
+# Start the development server with hot reload
+CMD ["npm", "run", "dev"]
