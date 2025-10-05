@@ -29,11 +29,11 @@ An end‑to‑end clinical AI workspace combining a Flask backend (ML, imaging, 
 - **Redis**: port `6379`
 
 
-## 📚 Documentation
+## 📚 Project Report
 
-For detailed documentation including architecture diagrams, API specifications, and usage examples, please refer to:
+For detailed Technical Project Report, please refer to:
 
-**[📄 CortexMD Documentation PDF](./CortexMD_Documentation.pdf)**
+**[📄 CortexMD ProjectReport PDF](./CortexMD_Documentation.pdf)**
 
 The comprehensive documentation covers:
 - System architecture and component interactions
@@ -645,5 +645,6 @@ make reset   # destructive; removes volumes/images
 - Pluggable LLM backends and tool routers
 - Import/Export for diagnosis sessions and datasets
 - FHIR/HL7 compatibility layer for EHR integration
+
 
 
