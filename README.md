@@ -1,7 +1,7 @@
-## CortexMD
+# CortexMD
 
 > This is our submission for the Samsung PRISM GenAI Hackathon — Theme: Multimodal AI.
-
+# Our solution is fully Deployed with backend and you can experience it too at- https://cortexmd-samsung.vercel.app/
 ### Multimodality + XAI at the core
 - Text, Imaging, and Video inputs with optional DICOM handling and file uploads
 - Audio-to-text (STT) intake for voice notes integrated into diagnosis flows
@@ -637,6 +637,7 @@ make reset   # destructive; removes volumes/images
 - Pluggable LLM backends and tool routers
 - Import/Export for diagnosis sessions and datasets
 - FHIR/HL7 compatibility layer for EHR integration
+
 
 
 
