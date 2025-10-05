@@ -1,0 +1,292 @@
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Theme tokens */
+:root {
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222.2 84% 4.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
+  --chart-1: 12 76% 61%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
+  --radius: 0.625rem;
+  --sidebar: 210 40% 98%;
+  --sidebar-foreground: 222.2 84% 4.9%;
+  --sidebar-primary: 222.2 47.4% 11.2%;
+  --sidebar-primary-foreground: 210 40% 98%;
+  --sidebar-accent: 210 40% 96%;
+  --sidebar-accent-foreground: 222.2 84% 4.9%;
+  --sidebar-border: 214.3 31.8% 91.4%;
+  --sidebar-ring: 222.2 84% 4.9%;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 84% 4.9%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+  --sidebar: 222.2 84% 4.9%;
+  --sidebar-foreground: 210 40% 98%;
+  --sidebar-primary: 220 70% 50%;
+  --sidebar-primary-foreground: 210 40% 98%;
+  --sidebar-accent: 217.2 32.6% 17.5%;
+  --sidebar-accent-foreground: 210 40% 98%;
+  --sidebar-border: 217.2 32.6% 17.5%;
+  --sidebar-ring: 212.7 26.8% 83.9%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  }
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%; /* Black text */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 210 100% 50%; /* Blue primary */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 95%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 210 40% 95%;
+    --muted-foreground: 0 0% 50%;
+    --accent: 210 100% 90%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 210 100% 50%;
+    --chart-1: 210 100% 50%;
+    --chart-2: 180 100% 50%;
+    --chart-3: 240 100% 50%;
+    --chart-4: 270 100% 50%;
+    --chart-5: 300 100% 50%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+    --primary: 60 9.1% 97.8%;
+    --primary-foreground: 24 9.8% 10%;
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 24 5.7% 82.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+/* Force a single, clean style for all explanation blocks */
+.explanation-card {
+  background-image: none;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  border-left: 4px solid #2563eb; /* blue-600 accent */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: none;
+  padding: 1rem; /* p-4 */
+  transition: none;
+}
+.explanation-card:hover {
+  box-shadow: none;
+  background-color: #ffffff;
+}
+/* Override number/indicator circle inside the card */
+.explanation-card > .flex > .flex-shrink-0 > div {
+  background: transparent !important;
+  color: #2563eb; /* blue-600 */
+  border: 1px solid #93c5fd; /* blue-300 */
+  box-shadow: none;
+}
+/* Paragraph text inside the explanation */
+.explanation-card p {
+  color: #111827; /* gray-900 */
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Detailed Explanations Specific Styles */
+.detailed-explanations {
+  margin-top: 1rem;
+}
+
+.explanation-section {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.explanation-header {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.explanation-content {
+  padding: 1rem;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.predicate-item {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border-left-width: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.predicate-verified {
+  border-left-color: #10b981; /* green-500 */
+  background-color: #ecfdf5; /* green-50 */
+}
+
+.predicate-unverified {
+  border-left-color: #ef4444; /* red-500 */
+  background-color: #fef2f2; /* red-50 */
+}
+
+.predicate-pending {
+  border-left-color: #f59e0b; /* yellow-500 */
+  background-color: #fffbeb; /* yellow-50 */
+}
+
+.fol-verification-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 0.75rem;
+  background-color: #f9fafb; /* gray-50 */
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .fol-verification-summary {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.metric-card {
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+.status-verified {
+  color: #059669; /* green-600 */
+  background-color: #dcfce7; /* green-100 */
+}
+
+.status-unverified {
+  color: #dc2626; /* red-600 */
+  background-color: #fee2e2; /* red-100 */
+}
+
+.status-pending {
+  color: #d97706; /* yellow-600 */
+  background-color: #fef3c7; /* yellow-100 */
+}
+
+/* Animation for expanding sections */
+@keyframes expandSection {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+    transform: translateY(0);
+  }
+}
+
+.expanding-section {
+  animation: expandSection 0.3s ease-in-out;
+}
+
+/* Confidence score colors */
+.confidence-high {
+  color: #059669; /* green-600 */
+}
+
+.confidence-medium {
+  color: #d97706; /* yellow-600 */
+}
+
+.confidence-low {
+  color: #dc2626; /* red-600 */
+}
