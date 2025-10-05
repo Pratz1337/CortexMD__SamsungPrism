@@ -122,9 +122,9 @@ graph TB
 
 ### 📄 **Comprehensive Technical Documentation**
 
-[![PDF Preview](https://img.shields.io/badge/📖-Read%20Full%20Report-FF6B6B?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](./CortexMD_ProjectReport.pdf)
+[![PDF Preview](https://img.shields.io/badge/📖-Read%20Full%20Report-FF6B6B?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](./Windows12Devs.pdf)
 
-**[Download CortexMD Project Report PDF →](./Windows12Devs_CortexMD_ProjectReport.pdf)**
+**[Download CortexMD Project Report PDF →](./Windows12Devs.pdf)**
 
 *Detailed architecture, methodologies, results, and future roadmap*
 
@@ -1124,6 +1124,7 @@ CREATE TABLE concern_severity_tracking (
 <tr>
 <td><code>make reset</code></td>
 <td>🔥 Nuclear option - remove everything
+
 
 
 
