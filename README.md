@@ -1,210 +1,503 @@
-# CortexMD
+# <div align="center">🧠 CortexMD</div>
 
-> This is our submission for the Samsung PRISM GenAI Hackathon — Theme: Multimodal AI.
-### Our solution is fully Deployed with backend and you can experience it too at- https://cortexmd-samsung.vercel.app/
+<div align="center">
+  
+[![Samsung PRISM](https://img.shields.io/badge/Samsung-PRISM%20GenAI%20Hackathon-1428A0?style=for-the-badge&logo=samsung&logoColor=white)](https://cortexmd-samsung.vercel.app/)
+[![Theme](https://img.shields.io/badge/Theme-Multimodal%20AI-FF6B6B?style=for-the-badge&logo=ai&logoColor=white)](https://cortexmd-samsung.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/🚀-Live%20Demo-00D9FF?style=for-the-badge)](https://cortexmd-samsung.vercel.app/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+
+**An Intelligent Clinical AI Workspace with Explainable Multimodal Diagnosis**
+
+[🌐 Live Demo](https://cortexmd-samsung.vercel.app/) • [📄 Project Report](#-project-report) • [🚀 Quick Start](#-quick-start) • [📖 Documentation](#-documentation)
+
+</div>
+
 ---
-### Multimodality + XAI at the core
-- Text, Imaging, and Video inputs with optional DICOM handling and file uploads
-- Audio-to-text (STT) intake for voice notes integrated into diagnosis flows
-- Real-time streams: status updates, severity trends, and websocket-powered EWS
-- Knowledge-enabled reasoning: UMLS code lookup and ontology mapping
-- Evidence-backed verification: FOL checks, enhanced knowledge verification, and online medical verification
-- Explainable outputs: structured reasoning paths, confidence scores, verification status, and sources (designed for clinicians)
-- Performance-aware: speed mode, caching, and patient prefetch for snappy UX
 
-An end‑to‑end clinical AI workspace combining a Flask backend (ML, imaging, and knowledge services) with a Next.js frontend. This README focuses on getting you running quickly on Windows, macOS, and Linux using either Docker (recommended) or a manual dev setup.
+## 🎯 Overview
 
-### What this project does
-- Dynamic AI diagnosis with explainability and verification
-- Real‑time CONCERN Early Warning System (risk tracking) with persistence
-- UMLS code lookup and ontology mapping
-- Knowledge graph integrations (Neo4j optional) and enhanced verifications
-- Imaging and video pipeline hooks and NVIDIA Clara integration (real)
+<div align="center">
 
-### At a glance
-- **Frontend (Next.js)**: port `3000`
-- **Backend (Flask)**: port `5000`
-- **PostgreSQL**: port `5432` (db: `cortexmd`, user: `cortexmd`)
-- **Neo4j Browser**: port `7475` (user: `neo4j`)
-- **Neo4j Bolt**: port `7688`
-- **Redis**: port `6379`
+```mermaid
+graph TB
+    subgraph "Input Modalities"
+        A[📝 Text Input] 
+        B[🖼️ Medical Imaging]
+        C[🎥 Video Analysis]
+        D[🎤 Voice Notes]
+        E[📊 DICOM Files]
+    end
+    
+    subgraph "CortexMD Core Engine"
+        F[🧠 AI Diagnosis Pipeline]
+        G[🔍 XAI Verification]
+        H[📚 Knowledge Graph]
+        I[⚡ Real-time EWS]
+    end
+    
+    subgraph "Intelligent Outputs"
+        J[📋 Structured Diagnosis]
+        K[💡 Clinical Reasoning]
+        L[⚠️ Risk Assessment]
+        M[📈 Evidence Sources]
+    end
+    
+    A --> F
+    B --> F
+    C --> F
+    D --> F
+    E --> F
+    
+    F --> G
+    F --> H
+    F --> I
+    
+    G --> J
+    H --> K
+    I --> L
+    G --> M
+    
+    style F fill:#667eea,stroke:#764ba2,stroke-width:3px,color:#fff
+    style G fill:#f093fb,stroke:#f5576c,stroke-width:2px,color:#fff
+    style I fill:#4facfe,stroke:#00f2fe,stroke-width:2px,color:#fff
+```
 
+</div>
+
+### ✨ Key Highlights
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+#### 🎭 **Multimodal Intelligence**
+- 📝 Text symptom analysis
+- 🖼️ Medical imaging (X-ray, MRI, CT)
+- 🎥 Video diagnostic clips
+- 🎤 Voice-to-text intake
+- 📊 DICOM file support
+
+</td>
+<td width="50%" valign="top">
+
+#### 🔬 **Explainable AI (XAI)**
+- 🧩 First-Order Logic verification
+- 📚 Knowledge graph reasoning
+- 🌐 Online medical verification
+- 📊 Confidence scoring
+- 🔍 Source attribution
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+#### ⚡ **Real-Time Systems**
+- 🚨 CONCERN Early Warning System
+- 📡 WebSocket status updates
+- 📈 Live severity tracking
+- 🔄 Persistent risk monitoring
+- ⏱️ Performance optimization
+
+</td>
+<td width="50%" valign="top">
+
+#### 🏥 **Clinical-Ready Features**
+- 🏷️ UMLS code lookup
+- 🧬 Ontology mapping
+- 🖥️ NVIDIA Clara integration
+- 💾 Session persistence
+- 📱 Responsive UI
+
+</td>
+</tr>
+</table>
+
+---
 
 ## 📚 Project Report
 
-For detailed Technical Project Report, please refer to:
+<div align="center">
 
-**[📄 CortexMD ProjectReport PDF](./CortexMD_ProjectReport.pdf)**
+### 📄 **Comprehensive Technical Documentation**
 
+[![PDF Preview](https://img.shields.io/badge/📖-Read%20Full%20Report-FF6B6B?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](./CortexMD_ProjectReport.pdf)
 
+**[Download CortexMD Project Report PDF →](./CortexMD_ProjectReport.pdf)**
 
+*Detailed architecture, methodologies, results, and future roadmap*
 
-## Quick start (the easiest way)
+</div>
 
-### Windows (PowerShell)
-```bash
-Set-Location .\\
-# Development with hot reload
+---
+
+## 🚀 Quick Start
+
+### 🪟 **Windows (PowerShell)**
+
+```powershell
+# Clone and navigate
+git clone <repository-url>
+Set-Location .\cortexmd
+
+# 🔥 Development Mode (Hot Reload)
 make dev
 
-# Or production-like
+# 🚀 Production Mode
 make prod
 
-# Open in browser
+# 🌐 Open in Browser
 start https://localhost:3000
 ```
 
-### macOS/Linux (Bash)
+### 🍎 **macOS / 🐧 Linux (Bash)**
+
 ```bash
-cd .
-# Development with hot reload
+# Clone and navigate
+git clone <repository-url>
+cd cortexmd
+
+# 🔥 Development Mode (Hot Reload)
 make dev
 
-# Or production-like
+# 🚀 Production Mode
 make prod
 
-# Open in browser
+# 🌐 Open in Browser
 open https://localhost:3000 2>/dev/null || xdg-open https://localhost:3000
 ```
 
-If you do not have `make`, see the Docker commands below.
+> 💡 **No Make?** See [Docker Commands](#option-c-standard-compose-balanced-defaults) below.
 
+---
 
-## Prerequisites
-- Docker Desktop 4.x (Compose v2) or Docker Engine + Compose plugin
-- For manual (non‑Docker) dev:
-  - Python 3.10+ and `pip`
-  - Node.js 18+ and `npm`
+## 📋 Prerequisites
 
+<table>
+<tr>
+<td align="center" width="33%">
 
-## Backend architecture overview
+### 🐳 **Docker**
+Docker Desktop 4.x+  
+or  
+Docker Engine + Compose
 
-The Flask app lives in `backend/core/app.py` and wires together services, models, and blueprints:
+</td>
+<td align="center" width="33%">
 
-- Initialization
-  - Loads env via `dotenv` and configures logging and CORS
-  - Initializes PostgreSQL via `get_database()` and ensures CONCERN severity tracking table exists
-  - Optionally initializes NVIDIA Clara , patient cache, and optimized DB fallback
-  - Registers blueprints:
-    - `api_handlers.ar: ar_bp` (Augmented Reasoning/diagnosis routes)
-    - `api_handlers.optimized_endpoints: optimized_bp` mounted at `/api/v2`
-  - Real‑time CONCERN EWS engine and optional WebSocket server
-  - UMLS code lookup service if `UMLS_API_KEY` is set
+### 🐍 **Python** (Manual Setup)
+Python 3.10+  
+pip package manager
 
-- Core concepts
-  - Diagnosis sessions tracked in memory and/or DB, with progress logs and artifacts
-  - Verification stack: FOL verification, enhanced evidence verification, online verification
-  - Integrated LLM services via `utils.ai_key_manager` (Groq first, Gemini fallback)
-  - Persistent CONCERN severity tracking table in Postgres with indices and history
+</td>
+<td align="center" width="33%">
 
-- Notable endpoints (selection)
-  - `GET /api/health`: health status, feature flags, basic dependency checks
-  - `GET /api/images/<filename>`: serves images from `uploads`
-  - AR blueprint (`/api/*`): diagnosis submission, status polling, results, explanations, predicate/FOL, chat, uploads
-  - Optimized API v2 (`/api/v2/*`): streamlined versions of diagnosis/notes endpoints for faster UI
-  - Real‑time CONCERN EWS (`/api/concern/*`): risk scoring, severity history, and trend data
-  - UMLS lookup (`/umls-lookup`, API in service layer): code and concept search (enabled with `UMLS_API_KEY`)
+### 📦 **Node.js** (Manual Setup)
+Node.js 18+  
+npm package manager
 
-Note: Many routes are implemented inside `api_handlers/` blueprints; `core/app.py` orchestrates and performs validation, session management, and finalization (including risk updates).
+</td>
+</tr>
+</table>
 
+---
 
-## Diagnosis pipeline (core/app.py)
+## 🏗️ Architecture Deep Dive
 
-High‑level processing in `run_comprehensive_diagnosis`:
-1. Create/update diagnosis session; start processing logs
-2. Initialize model pipeline via `ai_models.model_config_manager` with key management/load balancing
-3. Execute primary diagnosis (LLM‑backed) and collect structured `DiagnosisResult`
-4. Run verification layers:
-   - FOL (first‑order logic) verification and medical reasoning summary
-   - Enhanced evidence verification (textbook/knowledge graph)
-   - Online verification (medical web search)
-5. Build UI payload via `create_ui_data_structure` (explanations, confidence, verification status, sources)
-6. Persist and emit results; update Redis caches for responsiveness
-7. Finalize by classifying CONCERN risk using integrated LLM or rule‑based fallback; persist to Postgres and Redis
+### 🌐 System Architecture
 
-Performance controls: `SPEED_MODE=1` caps total pipeline time and trims heavy steps; verbose logs via `VERBOSE_LOGS=1`.
+<div align="center">
 
+```mermaid
+flowchart LR
+    subgraph Client["🖥️ Client Layer"]
+        UI[Next.js Frontend<br/>Port 3000]
+    end
+    
+    subgraph API["🔌 API Gateway"]
+        Flask[Flask Backend<br/>Port 5000]
+        WS[WebSocket Server]
+    end
+    
+    subgraph Services["⚙️ Core Services"]
+        Diag[Diagnosis Pipeline]
+        Ver[Verification Stack]
+        EWS[CONCERN EWS]
+        UMLS[UMLS Lookup]
+    end
+    
+    subgraph AI["🤖 AI/ML Layer"]
+        LLM[LLM Services<br/>Groq/Gemini]
+        Clara[NVIDIA Clara]
+        STT[Audio STT]
+    end
+    
+    subgraph Data["💾 Data Layer"]
+        PG[(PostgreSQL<br/>Port 5432)]
+        Neo[(Neo4j<br/>Ports 7475/7688)]
+        Redis[(Redis<br/>Port 6379)]
+    end
+    
+    UI <-->|REST/WS| Flask
+    UI <-->|Real-time| WS
+    
+    Flask --> Diag
+    Flask --> Ver
+    Flask --> EWS
+    Flask --> UMLS
+    
+    Diag --> LLM
+    Diag --> Clara
+    Diag --> STT
+    
+    Flask --> PG
+    Flask --> Neo
+    Flask --> Redis
+    
+    style UI fill:#667eea,stroke:#764ba2,stroke-width:2px,color:#fff
+    style Flask fill:#f093fb,stroke:#f5576c,stroke-width:2px,color:#fff
+    style LLM fill:#4facfe,stroke:#00f2fe,stroke-width:2px,color:#fff
+    style PG fill:#fa709a,stroke:#fee140,stroke-width:2px,color:#fff
+```
 
-## CONCERN Early Warning System (EWS)
-- Maintains persistent severity per patient with cumulative metrics and history (`concern_severity_tracking`)
-- Automatically updated when a diagnosis completes (`_finalize_concern_after_diagnosis`)
-- Risk levels: low, medium, high, critical, with confidence and recommendations
-- Accessible via `/api/concern/*` for current status and trend charts used by the frontend
+</div>
 
+### 🔄 Diagnosis Pipeline Flow
 
-## Run with Docker (recommended)
+<div align="center">
 
-### Option A: Development (hot reload)
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant API
+    participant Pipeline
+    participant Verification
+    participant EWS
+    participant DB
+
+    User->>Frontend: Submit Diagnosis
+    Frontend->>API: POST /api/diagnose
+    
+    API->>Pipeline: Initialize Session
+    Pipeline->>Pipeline: Process Modalities
+    Note over Pipeline: Text, Image, Video, Audio
+    
+    Pipeline->>Verification: Run XAI Stack
+    Verification->>Verification: FOL Verification
+    Verification->>Verification: Knowledge Graph
+    Verification->>Verification: Online Validation
+    
+    Verification->>EWS: Calculate Risk
+    EWS->>DB: Persist Severity
+    
+    Pipeline->>API: Build UI Payload
+    API->>Frontend: Return Results
+    Frontend->>User: Display Analysis
+    
+    loop Real-time Updates
+        API-->>Frontend: WebSocket Status
+        Frontend-->>User: Progress Updates
+    end
+```
+
+</div>
+
+### 🧩 Component Architecture
+
+```mermaid
+graph TB
+    subgraph Frontend["🎨 Frontend (Next.js)"]
+        UI1[Diagnosis Form]
+        UI2[Results Dashboard]
+        UI3[Patient Monitoring]
+        UI4[File Uploads]
+    end
+    
+    subgraph Backend["⚙️ Backend (Flask)"]
+        BP1[AR Blueprint]
+        BP2[Optimized API v2]
+        BP3[CONCERN Routes]
+        BP4[UMLS Service]
+    end
+    
+    subgraph Models["🤖 AI Models"]
+        M1[Diagnosis Model]
+        M2[Verification Model]
+        M3[Risk Classifier]
+        M4[STT Model]
+    end
+    
+    subgraph Storage["💾 Storage"]
+        S1[PostgreSQL]
+        S2[Redis Cache]
+        S3[Neo4j Graph]
+        S4[File System]
+    end
+    
+    UI1 --> BP1
+    UI2 --> BP2
+    UI3 --> BP3
+    UI4 --> BP1
+    
+    BP1 --> M1
+    BP1 --> M2
+    BP3 --> M3
+    BP1 --> M4
+    
+    M1 --> S1
+    M2 --> S2
+    M3 --> S1
+    BP1 --> S4
+    BP2 --> S2
+    BP4 --> S3
+    
+    style Frontend fill:#667eea,stroke:#764ba2,stroke-width:2px,color:#fff
+    style Backend fill:#f093fb,stroke:#f5576c,stroke-width:2px,color:#fff
+    style Models fill:#4facfe,stroke:#00f2fe,stroke-width:2px,color:#fff
+    style Storage fill:#fa709a,stroke:#fee140,stroke-width:2px,color:#fff
+```
+
+---
+
+## 🐳 Docker Deployment
+
+### Option A: Development (Hot Reload)
+
 ```bash
-# Equivalent to: docker compose -f docker-compose.dev.yml up --build -d
+# Start development environment
 make dev
-```
-Services and defaults are defined in `docker-compose.dev.yml`:
-- Frontend: http://localhost:3000 (DEV)
-- Backend: http://localhost:5000 (DEV)
-- PostgreSQL: localhost:5432 (db `cortexmd`, user `cortexmd`, pass `cortexmd123`)
-- Neo4j Browser: http://localhost:7475 (user `neo4j`, pass `12345678`)
-- Redis: localhost:6379
 
-Stop and logs:
+# Or manually
+docker compose -f docker-compose.dev.yml up --build -d
+```
+
+<details>
+<summary><b>📍 Service Endpoints</b></summary>
+
+| Service | URL | Credentials |
+|---------|-----|-------------|
+| 🎨 Frontend | http://localhost:3000 | N/A |
+| ⚙️ Backend | http://localhost:5000 | N/A |
+| 🗄️ PostgreSQL | localhost:5432 | `cortexmd` / `cortexmd123` |
+| 🌐 Neo4j Browser | http://localhost:7475 | `neo4j` / `12345678` |
+| ⚡ Neo4j Bolt | bolt://localhost:7688 | `neo4j` / `12345678` |
+| 🔴 Redis | localhost:6379 | No password |
+
+</details>
+
+**Management Commands:**
+
 ```bash
+# View status
 make status
+
+# Follow logs
 make logs
+
+# Stop all services
 make down
+
+# Restart services
+make restart
 ```
 
-### Option B: Production-ish (single machine)
+### Option B: Production Mode
+
 ```bash
-# Equivalent to: docker compose -f docker-compose.prod.yml up --build -d
+# Start production environment
 make prod
-```
-Defaults in `docker-compose.prod.yml`:
-- Frontend: https://localhost:3000
-- Backend: https://localhost:5000
-- SSL: self-signed certs expected in `backend/ssl_certs` and `frontend/ssl_certs`
 
-Stop and logs:
+# Or manually
+docker compose -f docker-compose.prod.yml up --build -d
+```
+
+<details>
+<summary><b>🔒 SSL Configuration</b></summary>
+
+Production mode requires SSL certificates:
+
+**Backend:** `backend/ssl_certs/`
+- `cert.pem`
+- `key.pem`
+
+**Frontend:** `frontend/ssl_certs/`
+- `cert.pem`
+- `key.pem`
+
+Generate self-signed certs (development):
 ```bash
-make status
-make logs
-make down
+openssl req -x509 -newkey rsa:4096 -nodes \
+  -keyout key.pem -out cert.pem -days 365
 ```
 
-### Option C: Standard compose (balanced defaults)
+</details>
+
+### Option C: Standard Compose (Balanced Defaults)
+
 ```bash
 docker compose up --build -d
 ```
 
-### Helpful Docker commands
+### 🛠️ Useful Docker Commands
+
 ```bash
-# Status / logs
+# View service status
 docker compose ps
+
+# Follow logs (all services)
 docker compose logs -f
 
-# Rebuild
+# Follow logs (specific service)
+docker compose logs -f backend
+
+# Rebuild and restart
 docker compose up --build -d
 
-# Stop all
+# Stop all services
 docker compose down
+
+# Remove volumes (clean slate)
+docker compose down -v
+
+# Execute commands in container
+docker compose exec backend bash
+docker compose exec frontend sh
 ```
 
+---
 
-## Manual development (without Docker)
+## 💻 Manual Development Setup
 
-Use this when you want local Python/Node processes with hot reload and easy debugging.
+Perfect for local debugging with hot reload!
 
-### 1) Backend (Flask)
+### 🐍 Backend Setup (Flask)
+
 ```bash
+# Navigate to backend
 cd backend
-python -m venv .venv
-# Windows
-./.venv/Scripts/Activate.ps1
-# macOS/Linux
-# source .venv/bin/activate
-pip install -r requirements.txt
 
-# Environment (create backend .env)
-# Windows PowerShell
+# Create virtual environment
+python -m venv .venv
+
+# Activate virtual environment
+# Windows PowerShell:
+.\.venv\Scripts\Activate.ps1
+
+# macOS/Linux:
+source .venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+**Create `.env` file:**
+
+<details>
+<summary><b>Windows PowerShell</b></summary>
+
+```powershell
 @"
 DATABASE_URL=postgresql://cortexmd:cortexmd123@localhost:5432/cortexmd
 REDIS_URL=redis://localhost:6379/0
@@ -213,434 +506,621 @@ NEO4J_USER=neo4j
 NEO4J_PASSWORD=12345678
 OPENAI_API_KEY=your_openai_api_key_here
 GOOGLE_AI_API_KEY=your_google_ai_api_key_here
+GROQ_API_KEY=your_groq_api_key_here
+UMLS_API_KEY=your_umls_api_key_here
 FLASK_ENV=development
 SECRET_KEY=your_secret_key_here
+SPEED_MODE=0
+VERBOSE_LOGS=1
 "@ | Out-File -Encoding ascii .env
+```
 
-# Start server (HTTPS if certs exist, else HTTP)
+</details>
+
+<details>
+<summary><b>macOS/Linux</b></summary>
+
+```bash
+cat > .env << 'EOF'
+DATABASE_URL=postgresql://cortexmd:cortexmd123@localhost:5432/cortexmd
+REDIS_URL=redis://localhost:6379/0
+NEO4J_URI=bolt://localhost:7688
+NEO4J_USER=neo4j
+NEO4J_PASSWORD=12345678
+OPENAI_API_KEY=your_openai_api_key_here
+GOOGLE_AI_API_KEY=your_google_ai_api_key_here
+GROQ_API_KEY=your_groq_api_key_here
+UMLS_API_KEY=your_umls_api_key_here
+FLASK_ENV=development
+SECRET_KEY=your_secret_key_here
+SPEED_MODE=0
+VERBOSE_LOGS=1
+EOF
+```
+
+</details>
+
+**Start backend server:**
+
+```bash
+# HTTPS (if certs exist)
 python app.py
-# Or force HTTP only
+
+# Force HTTP only
 python run_http_server.py
 ```
 
-Backend binds `0.0.0.0:5000`. If `backend/ssl_certs/cert.pem` and `key.pem` exist, it starts HTTPS automatically.
+### 📦 Frontend Setup (Next.js)
 
-### 2) Frontend (Next.js)
 ```bash
+# Navigate to frontend
 cd frontend
-npm install
 
-# Environment (create .env.local)
-# Windows PowerShell
+# Install dependencies
+npm install
+```
+
+**Create `.env.local` file:**
+
+<details>
+<summary><b>Windows PowerShell</b></summary>
+
+```powershell
 @"
 NEXT_PUBLIC_API_URL=http://localhost:5000
 NEXT_PUBLIC_WS_URL=ws://localhost:5000
 NODE_ENV=development
 "@ | Out-File -Encoding ascii .env.local
-
-npm run dev   # http://localhost:3000
 ```
 
-If you prefer HTTPS locally for the frontend, add certs into `frontend/ssl_certs` and use:
+</details>
+
+<details>
+<summary><b>macOS/Linux</b></summary>
+
 ```bash
+cat > .env.local << 'EOF'
+NEXT_PUBLIC_API_URL=http://localhost:5000
+NEXT_PUBLIC_WS_URL=ws://localhost:5000
+NODE_ENV=development
+EOF
+```
+
+</details>
+
+**Start development server:**
+
+```bash
+# HTTP mode
+npm run dev
+
+# HTTPS mode (requires certs)
 npm run dev-https
 ```
 
-
-## Ports and URLs
-- Frontend (DEV): http://localhost:3000
-- Frontend (PROD-ish): https://localhost:3000
-- Backend (DEV): http://localhost:5000
-- Backend (PROD-ish): https://localhost:5000
-- Neo4j Browser: http://localhost:7475
-- Neo4j Bolt: bolt://localhost:7688
-- PostgreSQL: localhost:5432
-- Redis: localhost:6379
-
-
-## Environment variables
-
-### Backend `.env`
-```env
-DATABASE_URL=postgresql://cortexmd:cortexmd123@localhost:5432/cortexmd
-REDIS_URL=redis://localhost:6379/0
-NEO4J_URI=bolt://localhost:7688
-NEO4J_USER=neo4j
-NEO4J_PASSWORD=12345678
-OPENAI_API_KEY=your_openai_api_key_here
-GOOGLE_AI_API_KEY=your_google_ai_api_key_here
-FLASK_ENV=production
-SECRET_KEY=your_secret_key_here
-```
-
-### Frontend `.env.local`
-```env
-NEXT_PUBLIC_API_URL=https://localhost:5000
-NEXT_PUBLIC_WS_URL=wss://localhost:5000
-NODE_ENV=production
-```
-
-In `docker-compose.*.yml`, these are wired for you with sane defaults. Update for your environment/secrets.
-
-
-## API quick reference (selected)
-
-| Endpoint | Method | Purpose |
-|---|---|---|
-| `/api/health` | GET | API health and feature flags |
-| `/api/images/<filename>` | GET | Serve uploaded images |
-| `/api/diagnose` | POST | Submit diagnosis (AR blueprint) |
-| `/api/status/<session_id>` | GET | Poll diagnosis status |
-| `/api/results/<session_id>` | GET | Fetch diagnosis results |
-| `/api/concern/*` | GET/POST | Risk scoring, severity history, trends |
-| `/api/v2/*` | mixed | Optimized endpoints for fast UI flows |
-
-Exact request/response shapes are defined in `api_handlers/*` and `core/models.py`. The frontend calls into these via `NEXT_PUBLIC_API_URL`.
-
-
-## SSL certificates
-- Development: place self‑signed certs at `backend/ssl_certs/{cert.pem,key.pem}` and `frontend/ssl_certs/`.
-- Production: replace with CA‑issued certs; ensure file mounts in `docker-compose.prod.yml` match your paths.
-- To run backend without SSL locally, use `python backend/run_http_server.py`.
-
-
-## Using the Makefile
-Targets are wrappers around Compose and common workflows (see `Makefile`).
-```bash
-make dev       # docker-compose.dev.yml up --build -d
-make prod      # docker-compose.prod.yml up --build -d
-make up        # docker compose up -d (default file)
-make down      # stop all
-make logs      # follow logs
-make status    # service status
-make install   # pip/npm install (local)
-make test      # run backend/frontend tests in containers
-make backup    # DB backups
-make restore   # DB restore
-```
-
-
-## Common tasks
-- Change ports: edit `ports:` in the respective `docker-compose*.yml`.
-- Switch API base URL used by frontend: set `NEXT_PUBLIC_API_URL` in `frontend/.env.local`.
-- Persist uploads locally: files are mounted at `backend/uploads` when using Docker.
-
-
-## Troubleshooting
-
-### Ports already in use
-Change the host ports in `docker-compose*.yml`, e.g.:
-```yaml
-services:
-  frontend:
-    ports:
-      - "3001:3000"
-```
-
-### Backend won’t start (HTTP 500 or healthcheck fails)
-- Check logs: `docker compose logs backend`
-- Verify DB is healthy: `docker compose ps postgres`
-- Confirm `DATABASE_URL` and DB connectivity
- - If running manually with HTTPS and certs are missing/corrupt, either provide valid certs in `backend/ssl_certs` or run `python backend/run_http_server.py` to force HTTP
-
-### SSL errors locally
-- Remove/regenerate dev certs in `backend/ssl_certs` and `frontend/ssl_certs`
-- Use HTTP mode temporarily: `python backend/run_http_server.py`
-
-### Out of memory / build fails
-- Increase Docker Desktop memory to 8GB+ (especially for ML libs)
-
-
-## Project layout (high level)
-```
-backend/           # Flask app, services, models, data pipelines
-frontend/          # Next.js app (App Router), UI components
-docker-compose*.yml
-Makefile
-```
-
-
-## References & Scripts
-- `HOW-TO-RUN.md` — one-click options and guided instructions
-- `DOCKER_README.md` — deeper Docker deployment guide
-- `start-dev.bat` / `start-dev.sh` — convenience starters
-- `quick-start.ps1` — PowerShell bootstrap
-
-
-## License
-MIT (see `LICENSE` if present). Replace defaults and credentials before deploying to production.
-
 ---
 
-## Multimodal feature deep dive
+## 🔌 API Reference
 
-### Text modality
-- Structured intake via the diagnosis form (symptoms, vitals, meds, history)
-- LLM‑backed primary diagnosis with differential list and clinical recommendations
-- Evidence layers (FOL, enhanced, online) turn free‑text into verifiable reasoning
+### 🏥 Health & Status
 
-### Imaging modality
-- Image uploads (PNG/JPG/TIFF) flow into the diagnosis session
-- Optional Clara integration for advanced imaging processing
-- Heatmaps/visual explanations summarized into the UI explanations payload
-
-### Video modality
-- Large video files supported (configurable `MAX_UPLOAD_SIZE`), e.g., ultrasound clips
-- Processing hooks detect video vs image and route via appropriate pipelines
-- Results contribute to the unified diagnosis and verification stack
-
-### Audio modality (STT)
-- Audio notes (WAV/MP3/OGG/M4A/WEBM) converted to text via `AudioSTTService`
-- Transcripts become part of the patient intake and reasoning context
-
-### Knowledge modality
-- UMLS lookup (with `UMLS_API_KEY`) enables code validation and terminology normalization
-- Knowledge graph (Neo4j optional) for concept relationships and evidence expansion
-
-### XAI layers (explainability)
-- Clinical reasoning paths emitted as UI‑friendly strings
-- FOL verification summary and confidence
-- Enhanced evidence verification sources and confidence
-- Online verification sources and confidence
-- Overall verification status synthesized for the clinician
-
-
-## Modality pipelines (high‑level)
-
-```
-Text Intake ─► LLM Diagnosis ─► XAI (FOL/Enhanced/Online) ─► UI Explanations
-
-Image/Video ─► Imaging Processor ─┘                     └─► Confidence + Sources
-
-Audio (STT) ─► Transcript ────────┘                     └─► Concern/EWS Update
+```http
+GET /api/health
 ```
 
-Key integration points:
-- `create_ui_data_structure(...)` builds a single payload the frontend expects
-- `_finalize_concern_after_diagnosis(...)` updates persistent risk and Redis cache
-- Clara and other heavy processors are optional and fail‑safe
+<details>
+<summary><b>Response</b></summary>
 
-
-## Endpoint examples
-
-### Submit a diagnosis
-```bash
-curl -k -X POST "https://localhost:5000/api/diagnose" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "patient_id": "PATIENT_001",
-    "symptoms": ["fever", "cough"],
-    "vitals": {"hr": 96, "spo2": 97},
-    "history": "No known chronic conditions"
-  }'
-```
-
-Response (truncated):
 ```json
 {
-  "session_id": "e0d9...",
-  "status": "processing"
+  "status": "healthy",
+  "timestamp": "2025-10-05T10:30:00Z",
+  "features": {
+    "umls_enabled": true,
+    "clara_enabled": true,
+    "neo4j_enabled": true
+  },
+  "dependencies": {
+    "database": "connected",
+    "redis": "connected",
+    "neo4j": "connected"
+  }
 }
 ```
 
-### Poll status
-```bash
-curl -k "https://localhost:5000/api/status/e0d9..."
+</details>
+
+### 🩺 Diagnosis Endpoints
+
+#### Submit Diagnosis
+
+```http
+POST /api/diagnose
+Content-Type: application/json
+
+{
+  "patient_id": "PATIENT_001",
+  "symptoms": ["fever", "cough", "fatigue"],
+  "vitals": {
+    "temperature": 38.5,
+    "heart_rate": 96,
+    "blood_pressure": "120/80",
+    "spo2": 97
+  },
+  "history": "No known chronic conditions",
+  "medications": ["Ibuprofen"],
+  "allergies": []
+}
 ```
 
-### Fetch results
-```bash
-curl -k "https://localhost:5000/api/results/e0d9..."
+<details>
+<summary><b>Response</b></summary>
+
+```json
+{
+  "session_id": "e0d9a3b7-4f2e-4c1a-8d6e-9f5b2c1a7e3d",
+  "status": "processing",
+  "message": "Diagnosis pipeline initiated"
+}
 ```
 
-Results include:
-- `explanations[]` (formatted clinical analysis)
-- `confidenceScores{}` (overall + per‑layer)
-- `verificationStatus{}` (FOL/enhanced/online)
-- `sources{}` (textbooks, online citations)
+</details>
 
-### Upload image
-```bash
-curl -k -X POST "https://localhost:5000/api/upload" \
-  -F "file=@/path/to/image.jpg" \
-  -F "patient_id=PATIENT_001"
+#### Check Status
+
+```http
+GET /api/status/{session_id}
 ```
 
-### CONCERN EWS current severity
-```bash
-curl -k "https://localhost:5000/api/concern/current?patient_id=PATIENT_001"
+<details>
+<summary><b>Response</b></summary>
+
+```json
+{
+  "session_id": "e0d9a3b7-4f2e-4c1a-8d6e-9f5b2c1a7e3d",
+  "status": "completed",
+  "progress": 100,
+  "current_step": "verification_complete",
+  "logs": [
+    "Initialized diagnosis pipeline",
+    "Processing patient data",
+    "Running AI analysis",
+    "Verifying results",
+    "Complete"
+  ]
+}
 ```
 
-### UMLS code lookup (if enabled)
-```bash
-# Example depends on the service route; consult /umls-lookup UI or service endpoints
+</details>
+
+#### Get Results
+
+```http
+GET /api/results/{session_id}
 ```
 
+<details>
+<summary><b>Response Structure</b></summary>
 
-## Developer workflows
-
-### Backend hot reload (manual)
-```bash
-cd backend
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-export FLASK_ENV=development
-python app.py
+```json
+{
+  "diagnosis": {
+    "primary": "Upper Respiratory Tract Infection",
+    "differential": ["Common Cold", "Influenza", "COVID-19"],
+    "recommendations": ["Rest", "Hydration", "Monitor symptoms"]
+  },
+  "explanations": [
+    "Patient presents with classic URI symptoms...",
+    "Vital signs indicate mild fever response...",
+    "No red flags for serious conditions..."
+  ],
+  "confidenceScores": {
+    "overall": 0.87,
+    "fol_verification": 0.92,
+    "enhanced_verification": 0.85,
+    "online_verification": 0.84
+  },
+  "verificationStatus": {
+    "fol": "verified",
+    "enhanced": "verified",
+    "online": "verified"
+  },
+  "sources": {
+    "textbooks": ["Harrison's Internal Medicine"],
+    "online": ["PubMed Article #12345", "CDC Guidelines"]
+  },
+  "risk_assessment": {
+    "level": "low",
+    "score": 0.23,
+    "recommendations": ["Routine follow-up"]
+  }
+}
 ```
 
-### Frontend hot reload
-```bash
-cd frontend
-npm install
-npm run dev
+</details>
+
+### 📁 File Upload
+
+```http
+POST /api/upload
+Content-Type: multipart/form-data
+
+file: [binary]
+patient_id: PATIENT_001
+file_type: image
 ```
 
-### Common service tasks
-```bash
-# Dockerized dev
-make dev
+<details>
+<summary><b>Supported File Types</b></summary>
 
-# Watch logs for backend only
-docker compose logs -f backend
+| Type | Extensions | Max Size |
+|------|-----------|----------|
+| 🖼️ Images | `.jpg`, `.jpeg`, `.png`, `.tiff`, `.dcm` | 50 MB |
+| 🎥 Videos | `.mp4`, `.avi`, `.mov` | 500 MB |
+| 🎤 Audio | `.wav`, `.mp3`, `.ogg`, `.m4a`, `.webm` | 25 MB |
 
-# Database shell
-make db-postgres
+</details>
+
+### ⚠️ CONCERN Early Warning System
+
+#### Current Severity
+
+```http
+GET /api/concern/current?patient_id=PATIENT_001
 ```
 
-### Data and uploads
-- Local dev: mounted at `backend/uploads/`
-- Clean by deleting files or changing volume mounts
+<details>
+<summary><b>Response</b></summary>
 
-
-## Testing
-
-### Backend tests (pytest)
-```bash
-docker compose exec backend python -m pytest tests/
+```json
+{
+  "patient_id": "PATIENT_001",
+  "current_severity": "medium",
+  "risk_score": 0.65,
+  "confidence": 0.88,
+  "trend": "stable",
+  "last_updated": "2025-10-05T10:30:00Z",
+  "recommendations": [
+    "Continue monitoring",
+    "Schedule follow-up in 48 hours"
+  ]
+}
 ```
 
-### Frontend checks
-```bash
-cd frontend
-npm run lint
-npm run type-check
+</details>
+
+#### Severity History
+
+```http
+GET /api/concern/history?patient_id=PATIENT_001&days=7
 ```
 
-### E2E ideas (not included by default)
-- Playwright/Cypress for UI flows (upload image, run diagnosis, verify explanations render)
-- API contract tests for `/api/v2` optimized endpoints
+#### Risk Trends
 
-
-## Benchmarks and performance tips
-- Set `SPEED_MODE=1` to cap pipeline time and skip heavy steps
-- Ensure Docker has 8GB+ RAM for smooth ML builds and faster runs
-- Use production images (`make prod`) for faster startup and fewer rebuilds
-- Enable Redis for caching; ensure `REDIS_URL` points to a healthy instance
-- Prewarm patient cache by visiting a few records at startup if applicable
-
-
-## Security & compliance
-- Replace all default credentials and passwords before any public deployment
-- Use CA‑issued SSL certificates in production; never ship self‑signed
-- Restrict CORS origins to your trusted domains
-- Store API keys as secrets, not in `.env` committed to VCS
-- Review logs for PHI or PII; configure redaction if needed
-- Consider audit logging and access controls for clinical usage
-
-
-## UX tour (frontend)
-- Diagnosis form with multimodal inputs
-- Real‑time progress indicators and logs while the pipeline runs
-- Results view with explanations, confidence, source tabs
-- Patient severity charts pulling from the CONCERN EWS endpoints
-- Optional pages: camera test, test reports (developer tooling)
-
-
-## Demo scripts (suggested)
-
-### End‑to‑end diagnosis
-1. Start dev stack: `make dev`
-2. Open the app: https://localhost:3000
-3. Enter text symptoms and vitals
-4. Upload an image or short video
-5. (Optional) Record an audio note and attach
-6. Submit and watch real‑time progress
-7. Review explanations, sources, and risk level
-
-### Imaging‑heavy 
-1. Prepare multiple images/videos for a case
-2. Upload sequentially to the same patient session
-3. Trigger diagnosis to see image features influence the result
-
-
-## FAQ
-
-### Why both HTTP and HTTPS locally?
-Backend auto‑enables HTTPS if certs exist. Otherwise, it falls back to HTTP for convenience. Frontend can run in either mode.
-
-### Do I need Neo4j?
-No. It’s optional. The system runs without it; enable it to explore knowledge‑graph‑powered features.
-
-### What about NVIDIA Clara?
-The app attempts real Clara,  and gracefully continues if neither is present.
-
-### How do I change ports?
-Edit `docker-compose*.yml` `ports:` mappings and/or frontend `NEXT_PUBLIC_API_URL`.
-
-### Can I disable heavy steps?
-Yes. Use `SPEED_MODE=1`. You can also trim verification steps in service layers.
-
-### Where are uploads stored?
-When dockerized, mapped to `backend/uploads`. In manual runs, `UPLOAD_FOLDER` defaults to `uploads`.
-
-### How do I reset everything?
-```bash
-make reset   # destructive; removes volumes/images
+```http
+GET /api/concern/trends?patient_id=PATIENT_001
 ```
 
+### 🏷️ UMLS Lookup
 
-## Extended troubleshooting
+```http
+GET /api/umls/search?query=fever&type=term
+```
 
-### Database migrations / schema
-- The app ensures the CONCERN severity table exists on startup
-- If schema drifts, rebuild DB volumes or run explicit migration scripts
+### 🔄 Optimized API v2
 
-### SSL handshake noise in logs
-- Werkzeug logging is patched to suppress common client disconnect errors during development
+```http
+GET /api/v2/diagnose/fast
+POST /api/v2/notes/quick
+```
 
-### Large uploads timing out
-- Increase `MAX_UPLOAD_SIZE` and ensure reverse proxy/client limits allow large bodies
+---
 
-### Slow first request after rebuild
-- ML libraries JIT and caches can cause first calls to be slow. Warm up with a quick diagnosis request.
+## 🎨 Multimodal Features
 
-### GPU support
-- Containers do not assume GPU. If you have CUDA, adapt Dockerfiles and base images accordingly.
+### 📝 Text Modality
 
+<table>
+<tr>
+<td width="50%">
 
-## Glossary
-- AR: Augmented Reasoning blueprint for diagnosis APIs
-- EWS: Early Warning System for persistent risk tracking
-- FOL: First‑Order Logic verification layer
-- STT: Speech‑to‑Text
-- UMLS: Unified Medical Language System
+**Input Processing**
+- Structured symptom intake
+- Clinical history parsing
+- Medication analysis
+- Vital signs interpretation
 
+</td>
+<td width="50%">
 
-## Credits & acknowledgements
-- Built for the Samsung PRISM GenAI Hackathon (Multimodal AI theme)
-- Thanks to open‑source communities behind Flask, Next.js, Tailwind, and ML/NLP libraries
-- Medical verification features inspired by evidence‑based clinical practice
+**AI Analysis**
+- LLM-backed diagnosis
+- Differential generation
+- Clinical reasoning
+- Recommendation synthesis
 
+</td>
+</tr>
+</table>
 
-## Roadmap (selected)
-- More granular imaging explainability
-- Real‑time video stream ingestion
-- Pluggable LLM backends and tool routers
-- Import/Export for diagnosis sessions and datasets
-- FHIR/HL7 compatibility layer for EHR integration
+### 🖼️ Imaging Modality
 
+```mermaid
+graph LR
+    A[Upload Image] --> B[Format Detection]
+    B --> C{Image Type}
+    C -->|X-ray| D[Radiological Analysis]
+    C -->|MRI| E[Tissue Analysis]
+    C -->|CT| F[3D Reconstruction]
+    C -->|DICOM| G[Medical Standard]
+    
+    D --> H[NVIDIA Clara]
+    E --> H
+    F --> H
+    G --> H
+    
+    H --> I[Heatmap Generation]
+    I --> J[Clinical Integration]
+    
+    style H fill:#76b900,stroke:#5a8800,stroke-width:2px,color:#fff
+```
 
+**Supported Formats:**
+- 🔹 JPEG/PNG/TIFF
+- 🔹 DICOM medical imaging
+- 🔹 Multi-frame images
+- 🔹 Heatmap overlays
 
+### 🎥 Video Modality
 
+**Processing Pipeline:**
+1. 📤 Large file upload (up to 500MB)
+2. 🎞️ Frame extraction
+3. 🔍 Temporal analysis
+4. 📊 Motion detection
+5. 🏥 Clinical relevance scoring
 
+**Use Cases:**
+- Ultrasound clips
+- Endoscopy recordings
+- Patient movement analysis
+- Surgical procedure videos
 
+### 🎤 Audio Modality (STT)
+
+```mermaid
+graph LR
+    A[🎤 Audio Input] --> B[Format Validation]
+    B --> C[Speech-to-Text]
+    C --> D[Transcript Cleanup]
+    D --> E[Clinical NLP]
+    E --> F[Symptom Extraction]
+    F --> G[Integration]
+    
+    style C fill:#fa709a,stroke:#fee140,stroke-width:2px,color:#fff
+```
+
+**Supported Formats:**
+- 🔸 WAV (uncompressed)
+- 🔸 MP3 (compressed)
+- 🔸 OGG/M4A/WEBM
+
+### 📚 Knowledge Modality
+
+<table>
+<tr>
+<td align="center" width="33%">
+
+**🏷️ UMLS Integration**
+
+Code validation  
+Terminology normalization  
+Concept mapping
+
+</td>
+<td align="center" width="33%">
+
+**🕸️ Knowledge Graph**
+
+Neo4j relationships  
+Ontology traversal  
+Evidence expansion
+
+</td>
+<td align="center" width="33%">
+
+**🔍 Online Verification**
+
+PubMed search  
+Clinical guidelines  
+Recent research
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🔬 Explainable AI (XAI) Stack
+
+### 🧩 First-Order Logic (FOL) Verification
+
+```
+∀ patient: hasSymptom(patient, fever) ∧ hasSymptom(patient, cough) 
+→ possibleDiagnosis(patient, URI)
+```
+
+**Confidence Scoring:**
+- Logical consistency check
+- Predicate validation
+- Rule application tracing
+
+### 📚 Enhanced Knowledge Verification
+
+```mermaid
+graph TB
+    A[Diagnosis Result] --> B{Knowledge Sources}
+    B --> C[Medical Textbooks]
+    B --> D[Knowledge Graph]
+    B --> E[Clinical Guidelines]
+    
+    C --> F[Cross-Reference]
+    D --> F
+    E --> F
+    
+    F --> G{Confidence Level}
+    G -->|High| H[✅ Verified]
+    G -->|Medium| I[⚠️ Needs Review]
+    G -->|Low| J[❌ Uncertain]
+    
+    style H fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff
+    style I fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#fff
+    style J fill:#ef4444,stroke:#dc2626,stroke-width:2px,color:#fff
+```
+
+### 🌐 Online Medical Verification
+
+**Real-time Validation:**
+1. Query medical databases
+2. Search recent publications
+3. Check clinical guidelines
+4. Aggregate evidence
+5. Calculate confidence
+
+**Sources:**
+- PubMed Central
+- CDC Guidelines
+- WHO Resources
+- Clinical Trials Database
+
+### 📊 Confidence Aggregation
+
+```python
+overall_confidence = (
+    fol_score * 0.35 +
+    enhanced_score * 0.35 +
+    online_score * 0.30
+)
+```
+
+---
+
+## ⚡ CONCERN Early Warning System
+
+### 🚨 Real-time Risk Monitoring
+
+```mermaid
+graph TD
+    A[Patient Data] --> B[Risk Calculation]
+    B --> C{Risk Level}
+    
+    C -->|0-0.25| D[🟢 Low Risk]
+    C -->|0.26-0.50| E[🟡 Medium Risk]
+    C -->|0.51-0.75| F[🟠 High Risk]
+    C -->|0.76-1.00| G[🔴 Critical Risk]
+    
+    D --> H[Routine Monitoring]
+    E --> I[Enhanced Surveillance]
+    F --> J[Immediate Review]
+    G --> K[Emergency Protocol]
+    
+    B --> L[(PostgreSQL)]
+    B --> M[(Redis Cache)]
+    
+    L --> N[Historical Trends]
+    M --> O[Real-time Updates]
+    
+    style G fill:#ef4444,stroke:#dc2626,stroke-width:3px,color:#fff
+    style F fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#fff
+    style E fill:#eab308,stroke:#ca8a04,stroke-width:2px,color:#fff
+    style D fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff
+```
+
+### 📈 Persistent Severity Tracking
+
+**Database Schema:**
+```sql
+CREATE TABLE concern_severity_tracking (
+    id SERIAL PRIMARY KEY,
+    patient_id VARCHAR(255) NOT NULL,
+    severity_level VARCHAR(50),
+    risk_score DECIMAL(5,4),
+    confidence DECIMAL(5,4),
+    recommendations TEXT[],
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    session_id VARCHAR(255),
+    
+    INDEX idx_patient_timestamp (patient_id, timestamp),
+    INDEX idx_severity (severity_level),
+    INDEX idx_risk_score (risk_score)
+);
+```
+
+### 📊 Trend Analysis
+
+- 📅 Historical severity progression
+- 📈 Risk score trajectory
+- ⚠️ Alert threshold breaches
+- 🔄 Pattern recognition
+- 📉 Improvement tracking
+
+---
+
+## 🛠️ Makefile Commands
+
+<table>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><code>make dev</code></td>
+<td>🔥 Start development environment with hot reload</td>
+</tr>
+<tr>
+<td><code>make prod</code></td>
+<td>🚀 Start production environment with SSL</td>
+</tr>
+<tr>
+<td><code>make up</code></td>
+<td>⬆️ Start services (default compose file)</td>
+</tr>
+<tr>
+<td><code>make down</code></td>
+<td>⬇️ Stop all services</td>
+</tr>
+<tr>
+<td><code>make restart</code></td>
+<td>🔄 Restart all services</td>
+</tr>
+<tr>
+<td><code>make logs</code></td>
+<td>📋 Follow logs from all services</td>
+</tr>
+<tr>
+<td><code>make status</code></td>
+<td>📊 Show service status</td>
+</tr>
+<tr>
+<td><code>make install</code></td>
+<td>📦 Install dependencies (backend + frontend)</td>
+</tr>
+<tr>
+<td><code>make test</code></td>
+<td>🧪 Run test suites</td>
+</tr>
+<tr>
+<td><code>make backup</code></td>
+<td>💾 Backup databases</td>
+</tr>
+<tr>
+<td><code>make restore</code></td>
+<td>♻️ Restore from backup</td>
+</tr>
+<tr>
+<td><code>make clean</code></td>
+<td>🧹 Clean up containers and volumes</td>
+</tr>
+<tr>
+<td><code>make reset</code></td>
+<td>🔥 Nuclear option - remove everything
