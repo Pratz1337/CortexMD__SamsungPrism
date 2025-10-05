@@ -9,7 +9,7 @@
 
 **An Intelligent Clinical AI Workspace with Explainable Multimodal Diagnosis**
 
-[🌐 Live Demo](https://cortexmd-samsung.vercel.app/) • [📄 Project Report](#-project-report) • [🚀 Quick Start](#-quick-start) • [📖 Documentation](#-documentation)
+[🌐 Live Demo](https://cortexmd-samsung.vercel.app/) • [📄 Project Report](#-project-report) • [🚀 Quick Start](#-quick-start) • [📖 Documentation](./Windows12Devs_CortexMD_Pitch.pdf)
 
 </div>
 
@@ -1124,5 +1124,6 @@ CREATE TABLE concern_severity_tracking (
 <tr>
 <td><code>make reset</code></td>
 <td>🔥 Nuclear option - remove everything
+
 
 
