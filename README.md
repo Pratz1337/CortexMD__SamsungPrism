@@ -33,17 +33,9 @@ An end‑to‑end clinical AI workspace combining a Flask backend (ML, imaging, 
 
 For detailed Technical Project Report, please refer to:
 
-**[📄 CortexMD ProjectReport PDF](./CortexMD_Documentation.pdf)**
+**[📄 CortexMD ProjectReport PDF](./CortexMD_ProjectReport.pdf)**
 
-The comprehensive documentation covers:
-- System architecture and component interactions
-- Detailed API reference and endpoints
-- Multimodal AI pipeline explanations
-- XAI (Explainable AI) system details
-- Deployment and configuration guides
-- Troubleshooting and best practices
 
-> 💡 **Tip**: Click the link above to view or download the PDF documentation directly from the repository.
 
 
 ## Quick start (the easiest way)
@@ -645,6 +637,7 @@ make reset   # destructive; removes volumes/images
 - Pluggable LLM backends and tool routers
 - Import/Export for diagnosis sessions and datasets
 - FHIR/HL7 compatibility layer for EHR integration
+
 
 
 
