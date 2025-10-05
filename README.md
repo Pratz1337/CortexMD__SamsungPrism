@@ -5,7 +5,7 @@
 [![Samsung PRISM](https://img.shields.io/badge/Samsung-PRISM%20GenAI%20Hackathon-1428A0?style=for-the-badge&logo=samsung&logoColor=white)](https://cortexmd-samsung.vercel.app/)
 [![Theme](https://img.shields.io/badge/Theme-Multimodal%20AI-FF6B6B?style=for-the-badge&logo=ai&logoColor=white)](https://cortexmd-samsung.vercel.app/)
 [![Live Demo](https://img.shields.io/badge/🚀-Live%20Demo-00D9FF?style=for-the-badge)](https://cortexmd-samsung.vercel.app/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache_License-green.svg?style=for-the-badge)](LICENSE)
 
 **An Intelligent Clinical AI Workspace with Explainable Multimodal Diagnosis**
 
@@ -1124,3 +1124,4 @@ CREATE TABLE concern_severity_tracking (
 <tr>
 <td><code>make reset</code></td>
 <td>🔥 Nuclear option - remove everything
+
