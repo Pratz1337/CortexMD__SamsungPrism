@@ -9,17 +9,6 @@
 
 ### Frontend Configuration
 
-**File: `frontend/.env.local`**
-```bash
-NEXT_PUBLIC_BACKEND_URL=http://34.133.136.240:5000
-NEXT_PUBLIC_API_URL=http://34.133.136.240:5000
-```
-
-**File: `frontend/.env`**
-```bash
-NEXT_PUBLIC_API_URL=http://34.133.136.240:5000
-NEXT_PUBLIC_BACKEND_URL=http://34.133.136.240:5000
-```
 
 ### Backend Configuration
 
@@ -29,17 +18,6 @@ NEXT_PUBLIC_BACKEND_URL=http://34.133.136.240:5000
 FLASK_HOST=0.0.0.0  # Binds to all network interfaces
 FLASK_PORT=5000
 
-# Frontend Configuration
-FRONTEND_URL=http://34.133.136.240:3000
-ALLOWED_ORIGINS=http://34.133.136.240:3000,https://34.133.136.240:3000,http://localhost:3000,https://localhost:3000
-```
-
-**File: `backend/core/app.py`**
-- Added GCP IP to CORS allowed origins:
-  - `http://34.133.136.240:3000` (frontend)
-  - `https://34.133.136.240:3000` (frontend HTTPS)
-  - `http://34.133.136.240:5000` (backend)
-  - `https://34.133.136.240:5000` (backend HTTPS)
 
 ## Why HTTP Instead of HTTPS?
 
@@ -78,33 +56,17 @@ npm run dev
 
 You can still develop locally - the CORS configuration allows both:
 - `http://localhost:3000` ✅
-- `http://34.133.136.240:3000` ✅
 
 ## Testing the Connection
 
-### 1. Test Backend Health:
-```bash
-curl http://34.133.136.240:5000/health
-```
 
 Expected response:
 ```json
 {"status": "healthy"}
 ```
 
-### 2. Test Frontend Connection:
-Open in browser:
-```
-http://34.133.136.240:3000
-```
 
-### 3. Test Backend from Frontend:
-In browser console:
-```javascript
-fetch('http://34.133.136.240:5000/health')
-  .then(r => r.json())
-  .then(console.log)
-```
+
 
 ## Firewall Rules Required
 
@@ -126,8 +88,8 @@ gcloud compute firewall-rules create allow-cortexmd \
 
 ### Frontend (.env.local)
 ```bash
-NEXT_PUBLIC_BACKEND_URL=http://34.133.136.240:5000
-NEXT_PUBLIC_API_URL=http://34.133.136.240:5000
+NEXT_PUBLIC_BACKEND_URL=
+NEXT_PUBLIC_API_URL
 ```
 
 ### Backend (.env)
@@ -137,18 +99,18 @@ FLASK_HOST=0.0.0.0
 FLASK_PORT=5000
 
 # Frontend
-FRONTEND_URL=http://34.133.136.240:3000
-ALLOWED_ORIGINS=http://34.133.136.240:3000,http://localhost:3000
+FRONTEND_URL=
+ALLOWED_ORIGINS
 
 # Database (already configured)
-DATABASE_URL=postgresql://postgres:xi6REKcZ3g33qwEk@pgnode305-mum-1.database.excloud.co.in:5432/cortexmd
+DATABASE_URL=
 
 # Redis (if needed)
 REDIS_URL=redis://localhost:6379/0
 
 # API Keys (already configured)
-GOOGLE_API_KEY=AIzaSyAYNH2sZ6S334iEHA8IRM7t2g7QP9eWSU8
-GROQ_API_KEY=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
+GOOGLE_API_KEY=
+GROQ_API_KEY=
 ```
 
 ## Troubleshooting
@@ -240,3 +202,4 @@ server {
 ✅ Both local and GCP deployment supported
 
 **Ready to deploy!** 🚀
+
